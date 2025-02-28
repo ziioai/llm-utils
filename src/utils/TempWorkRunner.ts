@@ -2,7 +2,10 @@
 import _ from 'lodash';
 
 import { LLMRole } from '../../lib/types/BasicTypes';
-import type { Message, MessagesTemplateItem, MessagesTemplateArgs, LLMWorkOptions } from '../../lib/types/BasicTypes';
+import type {
+  EasyMessage, MessagesTemplateItem, MessagesTemplateArgs,
+  // LLMWorkOptions,
+} from '../../lib/types/BasicTypes';
 
 export const systemPrompt = `
 ### 你是谁
@@ -63,7 +66,7 @@ export const messagesTemplate: MessagesTemplateItem[] = [
   {role: LLMRole.User, content: '==[请完成任务]=='},
 ];
 
-export function makeMessagesByTemplate(template: MessagesTemplateItem[], args: MessagesTemplateArgs): Message[] {
+export function makeMessagesByTemplate(template: MessagesTemplateItem[], args: MessagesTemplateArgs): EasyMessage[] {
   return template.map((item) => {
     if (item.isTemplate) {
       const compiled = _.template(item.content);
@@ -126,28 +129,28 @@ export const UpdateCatesWrapper = (response: TempWorkResponse, catesWrapper?: Ca
 }
 
 
-export const TempWorkOptions: LLMWorkOptions<string, CatesWrapper> = {
-  variables: {
-    catesWrapper: GenInitialOutput(),
-  },
-  messagesGenerator: (args: MessagesTemplateArgs) => makeMessagesByTemplate(messagesTemplate, args),
+// export const TempWorkOptions: LLMWorkOptions<string, CatesWrapper> = {
+//   variables: {
+//     catesWrapper: GenInitialOutput(),
+//   },
+//   messagesGenerator: (args: MessagesTemplateArgs) => makeMessagesByTemplate(messagesTemplate, args),
 
-  responseChunkProcessor: async (responseResult: string, _responseChunk: string): Promise<string> => {
-    return responseResult;
-  },
-  responseResultProcessor: async (responseResult: string) => {
-    UpdateCatesWrapper(JSON.parse(responseResult), TempWorkOptions.variables.catesWrapper);
-    return TempWorkOptions.variables.catesWrapper;
-  },
+//   responseChunkProcessor: async (responseResult: string, _responseChunk: string): Promise<string> => {
+//     return responseResult;
+//   },
+//   responseResultProcessor: async (responseResult: string) => {
+//     UpdateCatesWrapper(JSON.parse(responseResult), TempWorkOptions.variables.catesWrapper);
+//     return TempWorkOptions.variables.catesWrapper;
+//   },
 
-  onBeforeStart: () => {},
-  onAfterStart: () => {},
-  onBeforeUpdate: () => {},
-  onErrorInUpdate: () => {},
-  onAfterUpdate: () => {},
-  onBeforeEnd: () => {},
-  onAfterEnd: () => {},
-};
+//   onBeforeStart: () => {},
+//   onAfterStart: () => {},
+//   onBeforeUpdate: () => {},
+//   onErrorInUpdate: () => {},
+//   onAfterUpdate: () => {},
+//   onBeforeEnd: () => {},
+//   onAfterEnd: () => {},
+// };
 
 
 

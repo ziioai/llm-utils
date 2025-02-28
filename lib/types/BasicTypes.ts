@@ -7,6 +7,12 @@ export enum LLMRole {
   Developer = 'developer',
 }
 
+export interface EasyMessage {
+  role: LLMRole;
+  content: string;
+  name?: string;
+}
+
 export interface BasicMessage {
   role: LLMRole.System | LLMRole.Developer | LLMRole.User | LLMRole.Assistant;
   content: string;
@@ -165,7 +171,7 @@ export interface LifeCycleFns<CR, TT> {
 
 
 
-export type MessagesGenerator = (args: MessagesTemplateArgs) => Message[];
+export type MessagesGenerator = (args: MessagesTemplateArgs) => EasyMessage[];
 
 export interface LLMWorkOptions<CR, TT> {
   prompt?: string;
