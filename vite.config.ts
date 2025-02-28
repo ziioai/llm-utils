@@ -28,6 +28,7 @@ export default defineConfig({
       // 你不想打包进库的依赖
       external: [
         'vue',
+        'zod',
         'lodash', 'json5', 'axios', 'openai',
       ],
       output: {
@@ -35,6 +36,7 @@ export default defineConfig({
         // 提供一个全局变量
         globals: {
           vue: 'Vue',
+          zod: 'z',
           lodash: '_',
           json5: 'JSON5',
           axios: 'axios',

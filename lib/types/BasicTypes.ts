@@ -66,7 +66,7 @@ export interface MoonshotPrefixedAssistantMessage extends BasicMessage {
 }
 // https://platform.moonshot.cn/docs/api/partial
 
-export type Message = BasicMessage | ToolMessage | DeepSeekPrefixedAssistantMessage | MoonshotPrefixedAssistantMessage;
+export type Message = EasyMessage | BasicMessage | ToolMessage | DeepSeekPrefixedAssistantMessage | MoonshotPrefixedAssistantMessage;
 
 export interface MessagesTemplateItem {
   role: LLMRole;
