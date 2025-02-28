@@ -1,5 +1,7 @@
 //
 
+export { hello } from "./types/BasicTypes";
+
 export type {
   LLMRole,
   EasyMessage,

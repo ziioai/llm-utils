@@ -1,4 +1,6 @@
 
+export const hello = "hello";
+
 export enum LLMRole {
   System = 'system',
   Assistant = 'assistant',
