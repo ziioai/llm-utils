@@ -1,5 +1,26 @@
 
-const suppliers = [
+export interface SupplierDict {
+  type?: string;
+  docUrl?: string;
+
+  notes?: string|string[];
+
+  name: string;
+  desc: string;
+  baseUrl: string;
+  defaultModel: string;
+
+  chatUrl?: string;
+  modelsUrl?: string;
+  balanceUrl?: string;
+  countTokenUrl?: string;
+
+  models?: {
+    id: string;
+  }[];
+}
+
+const suppliers: SupplierDict[] = [
 
 
   {
