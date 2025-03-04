@@ -115,6 +115,7 @@ class LLMClient {
 
         for (const line of lines) {
           if (!line.trim()?.length) { continue; }
+          if (line.trim()==": keep-alive") { continue; }
           // console.log(line);
           try {
             const txt = line.trim().slice(5).trim();

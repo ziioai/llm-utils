@@ -142,7 +142,7 @@ export interface OldLifeCycleFns {
   onDone?: any;
 };
 
-export type LifeCycleFn = (context?: ChatStreamContext) => ChatStreamContext | Promise<ChatStreamContext>;
+export type LifeCycleFn = (context?: ChatStreamContext) => ChatStreamContext|void|undefined | Promise<ChatStreamContext|void|undefined>;
 
 export interface LifeCycleFns<CR, TT> {
   chunkProcessor: ChatResponseChunkProcessor<CR>;

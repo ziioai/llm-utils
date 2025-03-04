@@ -3,7 +3,6 @@
 export { hello } from "./types/BasicTypes";
 
 export type {
-  LLMRole,
   EasyMessage,
   BasicMessage,
   ToolMessage,
@@ -22,6 +21,8 @@ export type {
   LifeCycleFn,
   LifeCycleFns,
 } from "./types/BasicTypes";
+
+export { LLMRole } from "./types/BasicTypes";
 
 export { default as LLMClient } from "./modules/LLMClient";
 export type { LLMClientDict } from "./modules/LLMClient";
