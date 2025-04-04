@@ -1,5 +1,5 @@
 {
-  "version": "0.0.4",
+  "version": "0.0.5",
   "private": false,
   "type": "module",
   "name": "llm-utils",
@@ -39,6 +39,9 @@
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
     "preview": "vite preview",
+    "press:dev": "vitepress dev press",
+    "press:build": "vitepress build press",
+    "press:preview": "vitepress preview press",
     "pub": "npm publish --registry https://registry.npmjs.org"
   },
   "dependencies": {
@@ -57,6 +60,7 @@
     "typescript": "~5.7.2",
     "vite": "^6.1.0",
     "vite-plugin-dts": "^4.5.0",
+    "vitepress": "^1.6.3",
     "vue-tsc": "^2.2.0"
   }
 }

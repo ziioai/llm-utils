@@ -29,3 +29,8 @@ export type { LLMClientDict } from "./modules/LLMClient";
 
 export type { SupplierDict } from "./data/suppliers";
 export { default as suppliers } from "./data/suppliers";
+
+export {
+  badJSONParser,
+  badJSONLinesParser,
+} from "./utils";

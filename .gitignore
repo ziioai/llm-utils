@@ -1,5 +1,8 @@
 
-docs
+# docs
+
+press/.vitepress/dist
+press/.vitepress/cache
 
 .DS_Store
 

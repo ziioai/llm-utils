@@ -120,6 +120,7 @@
 			"ziio",
 			"zipson",
 			"zustand"
-		]
+		],
+		"svg.preview.background": "custom"
 	}
 }

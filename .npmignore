@@ -1,6 +1,8 @@
 .git
 .gitignore
 node_modules
+docs
+press
 test
 *.test.js
 .DS_Store
