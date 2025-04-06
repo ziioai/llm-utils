@@ -23,9 +23,15 @@ export default defineConfig({
     ],
     sidebar: [
       {
-        text: 'Coming soon',
+        text: 'Start',
         items: [
-          { text: 'Coming soon', link: '/list' }
+          { text: 'Start', link: '/start' }
+        ]
+      },
+      {
+        text: 'Utils',
+        items: [
+          { text: 'Utils', link: '/Utils/utils' }
         ]
       },
       {
